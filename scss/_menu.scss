@@ -12,17 +12,21 @@
         height: 3px;
         margin: 0 0 5px 0;
         background: white;
+        // make the menu-btn box properly square by removing the bottom padding on the 3: rd line
+        &:nth-child(3) {
+            margin: 0;
+        };
         @include easeOut;
     }
 
     // Rotate into x with menu lines
     &.close {
-        transform: rotate(1turn);
+        transform: rotate(180deg);
 
         .btn-line {
             // Line 1 - Rotate
             &:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
+                transform: translate(0px, 8px) rotate(45deg);
             }
 
             // Line 2 - Hide
@@ -32,7 +36,7 @@
 
             // Line 3 - Rotate
             &:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
+                transform: translate(0px, -8px) rotate(-45deg);
             }
         }
     }

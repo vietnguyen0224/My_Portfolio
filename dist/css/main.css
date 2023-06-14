@@ -11,14 +11,16 @@
     margin: 0 0 5px 0;
     background: white;
     transition: color 0.75s ease-out; }
+    .menu-btn .btn-line:nth-child(3) {
+      margin: 0; }
   .menu-btn.close {
-    transform: rotate(1turn); }
+    transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
+      transform: translate(0px, 8px) rotate(45deg); }
     .menu-btn.close .btn-line:nth-child(2) {
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px); }
+      transform: translate(0px, -8px) rotate(-45deg); }
 
 * {
   box-sizing: border-box; }
