@@ -9,7 +9,7 @@
     width: 30px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: white;
+    background: #fff;
     transition: all 0.7s ease-out; }
     .menu-btn .btn-line:nth-child(3) {
       margin: 0; }
@@ -57,7 +57,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/IMG_0487.jpg");
+      background: url("../img/portrait.jpg");
       background-size: cover;
       border-radius: 50%;
       border: solid 3px cyan; }
@@ -75,7 +75,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: beige;
+    color: #fff;
     text-decoration: none;
     transition: all 0.7s ease-out; }
     .menu .nav-link:hover {
@@ -93,38 +93,6 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 20px; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../img/IMG_0487.jpg");
-      background-size: cover;
-      width: 150px;
-      height: 150px; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box; }
 
@@ -136,7 +104,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.25; }
   body#bg-img {
-    background: url("../img/IMG_1434.jpg");
+    background: url("../img/background.jpg");
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
@@ -173,7 +141,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -185,3 +153,74 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #303030;
+  color: #fff;
+  height: 60px; }
+  #main-footer a {
+    font-style: italic;
+    font-weight: bold; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr); }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: cyan 3px solid;
+    width: 250px;
+    height: 250px; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.75rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: cyan 5px solid; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 20px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait.jpg");
+      background-size: cover;
+      width: 150px;
+      height: 150px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
