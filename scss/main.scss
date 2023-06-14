@@ -1,6 +1,74 @@
-$primary-color: #444;
+@import 'config';
+
+* {
+    box-sizing: border-box;
+}
 
 body {
+    @include background;
     background: $primary-color;
     color: #fff;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.25;
+}
+
+// Headings
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 450;
+
+    // & applied for any header with class lg-heading
+    // no &: applied for  class lg-heading inside headers
+    &.lg-heading {
+        font-size: 5rem;
+    }
+
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.3rem 1rem;
+        background: rgba(lighten($color: $primary-color, $amount: 2.5), 0.5);
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    height: 100%;
+
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+
+    // any main with #home is gonna effected
+    &#home {
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+        }
+    }
 }
